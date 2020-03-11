@@ -1,8 +1,12 @@
+/* eslint-disable import/first */
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import { Container, Content, Card, CardItem } from 'native-base';
+import { Container, Content } from 'native-base';
 import PropTypes from 'prop-types';
-import IMAGES from '../../configs/images';
+import { IMAGES } from '../../configs';
+import { scale } from '../../utils/scaling';
+import ReactNativeParallaxHeader from 'react-native-parallax-header';
+import { COLOR_WHITE } from '../../styles';
 import i18n from '../../i18n';
 // import { IMAGES } from '../../configs';
 import MainScreen from '../../components/layouts/MainScreen';
@@ -15,7 +19,17 @@ export default class Component extends React.Component {
     this.props.navigation.navigate('DetailInbox');
   };
   // style={styles.bodyCard1}
-  _renderCard = () => (
+  renderNavBar = () => (
+    <View style={styles.navContainer}>
+      <Header
+        title1={i18n.t('HeadMenu.area55')}
+        title2={i18n.t('HeadMenu.studio')}
+        containerStyle={styles.Header}
+      />
+      <View style={styles.statusBar} />
+    </View>
+  );
+  renderContent = () => (
     <MainScreen style={styles.content}>
       {/* <Header /> */}
       <Container>
@@ -24,56 +38,31 @@ export default class Component extends React.Component {
             <Image source={IMAGES.appLogo} resizeMode="contain" style={styles.logo} />
           </View>
           <View style={styles.line} />
-          {/* <Card style={[styles.cardContainer, styles.cardSize]}>
-            <CardItem style={[styles.pageText, styles.cardContainer]}>
-              <View>
-                <Text style={styles.Text}>Number</Text>
-              </View>
-            </CardItem>
-            <View style={[styles.line]} />
-            <View style={[styles.itemCard, styles.cardContainer]}>
-              <Text style={styles.textItem}>(0274)2872822</Text>
-            </View>
-            <View style={[styles.itemCard, styles.cardContainer]}>
-              <Text style={styles.textItem}>+628562859954</Text>
-            </View>
-
-            <CardItem style={[styles.pageText, styles.cardContainer]}>
-              <View>
-                <Text style={styles.Text}>Address</Text>
-              </View>
-            </CardItem>
-            <View style={[styles.line]} />
-            <View style={[styles.itemCard, styles.cardContainer]}>
-              <Text style={styles.textItem}>Kweni RT 02, No. 22 Panggungharjo, Sewon Bantul</Text>
-            </View>
-            <View style={[styles.itemCard, styles.cardContainer]}>
-              <Text style={styles.textItem}>Jl.P.Soedirman 113 Tiron Banyakan, Kediri Jawa Timur</Text>
-            </View>
-
-            <CardItem style={[styles.pageText, styles.cardContainer]}>
-              <View>
-                <Text style={styles.Text}>Social Media / Portofolio</Text>
-              </View>
-            </CardItem>
-            <View style={[styles.line]} />
-          </Card> */}
+          <View style={styles.desc}>
+            <Text style={styles.descText}>{i18n.t('Hello')}</Text>
+          </View>
         </Content>
       </Container>
     </MainScreen>
   );
-  // _renderBlank = () => <NoData />;
-
-  // _renderContent = () => (
-
-  // );
-  // _renderContent = () => ();
   render() {
     return (
-      <MainScreen>
-        <Header title1={i18n.t('HeadMenu.area55')} title2={i18n.t('HeadMenu.studio')} about />
-        {this._renderCard()}
-      </MainScreen>
+      <View style={styles.container}>
+        <ReactNativeParallaxHeader
+          headerMinHeight={scale(56)}
+          headerMaxHeight={scale(240)}
+          extraScrollHeight={scale(20)}
+          navbarColor={COLOR_WHITE}
+          // titleStyle={styles.titleStyle}
+          backgroundImage={IMAGES.foto}
+          backgroundImageScale={1.2}
+          renderNavBar={this.renderNavBar}
+          renderContent={this.renderContent}
+          containerStyle={styles.container}
+          contentContainerStyle={styles.contentContainer}
+          innerContainerStyle={styles.container}
+        />
+      </View>
     );
   }
 }

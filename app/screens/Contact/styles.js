@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-color-literals */
 import { StyleSheet } from 'react-native';
 import { COLOR_BASE_PRIMARY_MAIN, COLOR_WHITE } from '../../styles';
 import { scale } from '../../utils/scaling';
@@ -6,21 +7,23 @@ import { black } from '../../styles/colors';
 
 const styles = StyleSheet.create({
   // eslint-disable-next-line react-native/no-color-literals
-
-  // bodyLeftRight: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   marginLeft: scale(-10)
-  // },
-  // bodyCenter: {
-  //   flex: 4,
-  //   flexDirection: 'column',
-  //   justifyContent: 'center'
-  // },
   content: {
-    backgroundColor: COLOR_WHITE,
+    backgroundColor: '#F9F9F9',
     alignItems: 'center'
+  },
+  Header: {
+    backgroundColor: COLOR_WHITE,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4
+  },
+  contentColor: {
+    backgroundColor: '#F9F9F9'
   },
   cardSize: {
     width: scale(280),

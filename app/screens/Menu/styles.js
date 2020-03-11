@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { COLOR_GREY_DARK } from '../../styles';
+import { COLOR_WHITE } from '../../styles';
 import { scale } from '../../utils/scaling';
 import METRICS from '../../constants/metrics';
 
@@ -34,16 +34,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '300'
   },
-  // blankText1: {
-  //   fontSize: 11,
-  //   fontWeight: '300',
-  //   marginBottom: METRICS.baseMargin
-  // },
   container: {
-    backgroundColor: COLOR_GREY_DARK,
-    marginHorizontal: METRICS.doubleBaseMargin,
+    backgroundColor: COLOR_WHITE,
+    marginHorizontal: scale(40),
     marginVertical: METRICS.baseMargin
-  }
+  },
+  content: {
+    backgroundColor: COLOR_WHITE
+  },
   // card: {
   //   borderRadius: 10,
   //   height: scale(70)
@@ -62,9 +60,7 @@ const styles = StyleSheet.create({
   //   fontSize: 11,
   //   fontWeight: 'bold'
   // },
-  // content: {
-  //   backgroundColor: COLOR_GREY_BACKGROUND
-  // },
+
   // mar: {
   //   paddingVertical: 10
   // }

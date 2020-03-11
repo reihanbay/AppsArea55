@@ -1,22 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Left, Right } from 'native-base';
 import PropTypes from 'prop-types';
 import styles from './styles';
-import BackButton from '../BackButton';
-import BurgerButton from '../BurgerButton';
-// import Setting from '../../../../assets/svgs/Setting';
 import Contact from '../../../../assets/svgs/Contact';
 
 export default class Component extends React.Component {
   _renderLeft = () => {
-    const { burger, back, leftComponent, leftContainerStyle } = this.props;
+    const { leftComponent, leftContainerStyle } = this.props;
     let LeftComponent = <View />;
-    if (burger) {
-      LeftComponent = <BurgerButton />;
-    } else if (back) {
-      LeftComponent = <BackButton />;
-    } else if (leftComponent) {
+    if (leftComponent) {
       LeftComponent = leftComponent;
     }
     return <View style={[styles.leftRightContainer, leftContainerStyle]}>{LeftComponent}</View>;
@@ -38,7 +30,7 @@ export default class Component extends React.Component {
     const { contact, rightComponent, rightContainerStyle } = this.props;
     let RightComponent = <View />;
     if (contact) {
-      RightComponent = <Contact />;
+      RightComponent = <Contact active />;
     } else if (rightComponent) {
       RightComponent = rightComponent;
     }
@@ -46,8 +38,9 @@ export default class Component extends React.Component {
   };
 
   render() {
+    const { containerStyle } = this.props;
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, containerStyle]}>
         {this._renderLeft()}
         {this._renderCenter()}
         {this._renderRight()}
@@ -62,11 +55,10 @@ Component.propTypes = {
   leftContainerStyle: PropTypes.object,
   centerContainerStyle: PropTypes.object,
   rightContainerStyle: PropTypes.object,
+  containerStyle: PropTypes.object,
   leftComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
   centerComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
   rightComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
-  burger: PropTypes.bool,
-  back: PropTypes.bool,
   contact: PropTypes.bool
 };
 
@@ -75,11 +67,10 @@ Component.defaultProps = {
   title2: '',
   leftContainerStyle: {},
   centerContainerStyle: {},
+  containerStyle: {},
   rightContainerStyle: {},
   leftComponent: <View />,
   centerComponent: <View />,
   rightComponent: <View />,
-  burger: false,
-  back: true,
   contact: false
 };

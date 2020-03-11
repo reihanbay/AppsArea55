@@ -4,7 +4,8 @@ const images = {
   board1: require('../../assets/images/on_boarding_1.png'),
   board2: require('../../assets/images/on_boarding_2.png'),
   board3: require('../../assets/images/on_boarding_3.png'),
-  actDot: require('../../assets/images/active_dot.png')
+  actDot: require('../../assets/images/active_dot.png'),
+  foto: require('../../assets/images/foto.png')
   // back: require('../../assets/images/back.png'),
   // checkBoxOn: require('../../assets/images/checkbox_on.png'),
   // checkBoxOff: require('../../assets/images/checkbox_off.png'),

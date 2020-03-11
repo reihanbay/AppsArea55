@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
-import { COLOR_WHITE, FONT_HEADLINE6_PRIMARY, COLOR_BASE_PRIMARY_MAIN } from '../../../styles';
+import { FONT_HEADLINE6_PRIMARY, COLOR_BASE_PRIMARY_MAIN } from '../../../styles';
 import { scale } from '../../../utils/scaling';
 
 export default StyleSheet.create({

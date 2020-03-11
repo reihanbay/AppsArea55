@@ -18,7 +18,7 @@ export default class Component extends React.Component {
   _renderCard = () => (
     <MainScreen style={styles.content}>
       <Header title1={i18n.t('HeadMenu.area55')} title2={i18n.t('HeadMenu.studio')} />
-      <Container>
+      <Container style={styles.container}>
         <Content>
           <Text>sadasdasdasd</Text>
         </Content>

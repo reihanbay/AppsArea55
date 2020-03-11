@@ -3,7 +3,7 @@ import Home from '../screens/Home';
 import Contact from '../screens/Contact';
 import About from '../screens/About';
 import Menu from '../screens/Menu';
-import Search from '../screens/Search';
+import Web from '../screens/Web';
 import Splash from '../screens/Splashscreen';
 import UploadPhoto from '../screens/UploadPhoto';
 import History from '../screens/History';
@@ -40,7 +40,18 @@ export const MenuStack = StackNavigator(
     Menu: {
       screen: Menu,
       navigationOptions: {
-        tabBarVisible: false
+        tabBarVisible: true
+      }
+    }
+  },
+  { headerMode: 'none',navigationOptions: {tabBarVisible: false}}
+);
+export const WebStack = StackNavigator(
+  {
+    Web: {
+      screen: Web,
+      navigationOptions: {
+        tabBarVisible: true
       }
     }
   },
@@ -51,7 +62,7 @@ export const ContactStack = StackNavigator(
     Contact: {
       screen: Contact,
       navigationOptions: {
-        tabBarVisible: false
+        tabBarVisible: true
       }
     }
   },
@@ -62,23 +73,23 @@ export const AboutStack = StackNavigator(
     About: {
       screen: About,
       navigationOptions: {
-        tabBarVisible: false
+        tabBarVisible: true
       }
     }
   },
   { headerMode: 'none',navigationOptions: {tabBarVisible: false}}
 );
-export const SearchStack = StackNavigator(
-  {
-    Search: {
-      screen: Search,
-      navigationOptions: {
-        tabBarVisible: true
-      }
-    }
-  },
-  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
-);
+// export const SearchStack = StackNavigator(
+//   {
+//     Search: {
+//       screen: Search,
+//       navigationOptions: {
+//         tabBarVisible: true
+//       }
+//     }
+//   },
+//   { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
+// );
 
 export const UploadPhotoStack = StackNavigator(
   {

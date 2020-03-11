@@ -1,21 +1,11 @@
 import { StyleSheet, Platform } from 'react-native';
-import { COLOR_WHITE, FONT_HEADLINE6_PRIMARY, COLOR_BASE_PRIMARY_MAIN } from '../../../styles';
-import { scale } from '../../../utils/scaling';
+import { FONT_HEADLINE6_PRIMARY, COLOR_BASE_PRIMARY_MAIN } from '../../../styles';
+import metrics from '../../../constants/metrics';
 
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: COLOR_WHITE,
-    height: Platform.OS === 'ios' ? 44 : 56,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
-
-    elevation: 4
+    height: Platform.OS === 'ios' ? 44 : 56
   },
   centerContainer: {
     flex: 4,
@@ -23,7 +13,7 @@ export default StyleSheet.create({
     alignItems: 'flex-start'
   },
   leftRightContainer: {
-    flex: 1,
+    marginHorizontal: metrics.doubleBaseMargin,
     alignItems: 'center',
     justifyContent: 'center'
   },

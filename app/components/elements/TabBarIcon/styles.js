@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native';
 import {
   COLOR_WHITE,
-  COLOR_BASE_PRIMARY_LIGHT,
+  COLOR_BASE_PRIMARY_MAIN,
   COLOR_FONT_PRIMARY_LIGHT,
-  COLOR_FONT_SECONDARY_LIGHT,
   COLOR_BASE_SECONDARY_LIGHT
 } from '../../../styles';
 
@@ -14,7 +13,7 @@ export default StyleSheet.create({
   },
   active: {
     borderBottomWidth: 2,
-    borderBottomColor: COLOR_BASE_PRIMARY_LIGHT
+    borderBottomColor: COLOR_BASE_PRIMARY_MAIN
   },
   inactive: {},
   icon: {},
@@ -53,7 +52,7 @@ export default StyleSheet.create({
     alignSelf: 'center'
   },
   activeText: {
-    color: COLOR_FONT_SECONDARY_LIGHT,
+    color: COLOR_BASE_PRIMARY_MAIN,
     fontSize: 10,
     alignSelf: 'center'
   }

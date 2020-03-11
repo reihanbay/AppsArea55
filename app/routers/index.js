@@ -1,5 +1,5 @@
 import { SwitchNavigator } from 'react-navigation';
-import { OnBoardingStack,SplashScreenStack,MenuStack,ContactStack ,AboutStack } from './stackNavigator';
+import { OnBoardingStack,SplashScreenStack,MenuStack,ContactStack ,AboutStack, WebStack } from './stackNavigator';
 import { Drawer } from './drawerNavigator';
 
 export default SwitchNavigator(
@@ -8,10 +8,11 @@ export default SwitchNavigator(
     OnBoarding: OnBoardingStack,
     Menu:MenuStack,
     Contact: ContactStack,
+    Web: WebStack,
     About: AboutStack,
     App: Drawer
   },
   {
-    initialRouteName: 'About'
+    initialRouteName: 'App'
   }
 );
