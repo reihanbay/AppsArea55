@@ -36,7 +36,7 @@ const navigatorConfig = {
   tabBarPosition: 'bottom',
   backBehavior: true,
   lazy: true,
-  swipeEnabled: true,
+  swipeEnabled: false,
   animationEnabled: true,
   tabBarOptions: {
     showLabel: false,

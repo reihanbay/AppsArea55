@@ -1,27 +1,27 @@
+/* eslint-disable react/jsx-boolean-value */
 import React from 'react';
-import { View, WebView } from 'react-native';
+import { View, Dimensions } from 'react-native';
+import MyWebView from 'react-native-webview-autoheight';
 import { Container, Content } from 'native-base';
-import PropTypes from 'prop-types';
 import MainScreen from '../../components/layouts/MainScreen';
-// import Header from '../../components/elements/HeaderMenu';
 import styles from './styles';
 
 export default class Component extends React.Component {
-  _onPress = () => {};
-  _toDetail = () => {
-    this.props.navigation.navigate('DetailInbox');
-  };
-
   _renderWeb = () => (
     <MainScreen style={styles.content}>
-      {/* <Header title1={i18n.t('HeadMenu.area55')} title2={i18n.t('HeadMenu.studio')} /> */}
       <Container>
         <Content>
           <View style={styles.container}>
-            <WebView
+            <MyWebView
               source={{
-                uri: 'https://web.whatsapp.com'
+                uri: 'https://www.area55studio.com'
               }}
+              startInLoadingState={true}
+              javaScriptEnabled={true}
+              domStorageEnabled={false}
+              scalesPageToFit={false}
+              scrollEnabled={true}
+              style={styles.web}
             />
           </View>
         </Content>
@@ -32,6 +32,3 @@ export default class Component extends React.Component {
     return <MainScreen>{this._renderWeb()}</MainScreen>;
   }
 }
-Component.propTypes = {
-  navigation: PropTypes.object.isRequired
-};

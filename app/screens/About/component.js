@@ -2,23 +2,16 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { Container, Content } from 'native-base';
-import PropTypes from 'prop-types';
 import { IMAGES } from '../../configs';
 import { scale } from '../../utils/scaling';
 import ReactNativeParallaxHeader from 'react-native-parallax-header';
 import { COLOR_WHITE } from '../../styles';
 import i18n from '../../i18n';
-// import { IMAGES } from '../../configs';
 import MainScreen from '../../components/layouts/MainScreen';
 import Header from '../../components/elements/Header';
 import styles from './styles';
 
 export default class Component extends React.Component {
-  _onPress = () => {};
-  _toDetail = () => {
-    this.props.navigation.navigate('DetailInbox');
-  };
-  // style={styles.bodyCard1}
   renderNavBar = () => (
     <View style={styles.navContainer}>
       <Header
@@ -31,7 +24,6 @@ export default class Component extends React.Component {
   );
   renderContent = () => (
     <MainScreen style={styles.content}>
-      {/* <Header /> */}
       <Container>
         <Content padder>
           <View style={{ alignItems: 'center' }}>
@@ -53,7 +45,6 @@ export default class Component extends React.Component {
           headerMaxHeight={scale(240)}
           extraScrollHeight={scale(20)}
           navbarColor={COLOR_WHITE}
-          // titleStyle={styles.titleStyle}
           backgroundImage={IMAGES.foto}
           backgroundImageScale={1.2}
           renderNavBar={this.renderNavBar}
@@ -66,6 +57,3 @@ export default class Component extends React.Component {
     );
   }
 }
-Component.propTypes = {
-  navigation: PropTypes.object.isRequired
-};
